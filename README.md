@@ -18,7 +18,6 @@ Create the following resources:
   - Link the git repo to data factory: https://docs.microsoft.com/en-us/azure/data-factory/source-control
 - Create Databricks Cluster (SINGLE NODE): 
   - Link git repo and create databricks folder https://docs.microsoft.com/en-us/azure/databricks/repos/
-  - Access 
   - Read the CSV file from storage account and store it as parquet:
     - Link Databricks and Storage account https://docs.microsoft.com/en-us/azure/databricks/scenarios/store-secrets-azure-key-vault
     **DO NOT COMMIT CONNECTION STRINGS**: Store them in the key vault
