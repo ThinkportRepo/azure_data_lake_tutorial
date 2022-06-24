@@ -21,7 +21,7 @@ Create the following resources:
   - Access 
   - Read the CSV file from storage account and store it as parquet:
     - Link Databricks and Storage account https://docs.microsoft.com/en-us/azure/databricks/scenarios/store-secrets-azure-key-vault
-    _DO NOT COMMIT CONNECTION STRINGS_: Store them in the key vault
+    **DO NOT COMMIT CONNECTION STRINGS**: Store them in the key vault
 
 
 ## Task 1: Data Lake Pipeline
