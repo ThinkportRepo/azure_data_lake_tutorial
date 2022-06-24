@@ -24,7 +24,7 @@ Create the following resources:
     **DO NOT COMMIT CONNECTION STRINGS**: Store them in the key vault
 
 
-## Task 1: Data Lake Pipeline
+## Task 1: Manage Data Lake with Databricks
 **STARTING NOW:** Create a feature branch for each task. After the task is finish, create a Pull Request and present it in a Code Review. 
 - Databricks Notebook from Raw to Transform
   - Step 1: NB which collect the csv file and stores it as parquet in transform
