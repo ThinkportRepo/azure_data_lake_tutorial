@@ -21,16 +21,16 @@ Create the following resources:
   - Access 
   - Read the CSV file from storage account and store it as parquet:
     - Link Databricks and Storage account https://docs.microsoft.com/en-us/azure/databricks/scenarios/store-secrets-azure-key-vault
-    __DO NOT COMMIT CONNECTION STRINGS__: Store them in the key vault
+    _DO NOT COMMIT CONNECTION STRINGS_: Store them in the key vault
 
 
 ## Task 1: Data Lake Pipeline
-__ STARTING NOW:__ Create a feature branch for each task. After the task is finish, create a Pull Request and present it in a Code Review. 
+**STARTING NOW:** Create a feature branch for each task. After the task is finish, create a Pull Request and present it in a Code Review. 
 - Databricks Notebook from Raw to Transform
   - Step 1: NB which collect the csv file and stores it as parquet in transform
     - What is the main difference between csv and parquet?
   - Step 2: Now we want to upload multiple csv file and check whether the entries are new or have to be updated. 
-    - Define a primary key in csv. No actual todo just ensure that your csv has a column with unique values. __SIMPLIFICATION__: use fixed naming in the notebook. hence, if you update the raw csv, use the same name. 
+    - Define a primary key in csv. No actual todo just ensure that your csv has a column with unique values. **SIMPLIFICATION**: use fixed naming in the notebook. hence, if you update the raw csv, use the same name. 
     - Create the following databricks nb: read the transform parquet and the raw parquet. Check whether there are new or updated columns. If there are new or updated, append it in transform. Do not upload records which have not changed. Incl a upload timestame in the meta column.
 - Databricks Notebook from Transform to Serving
   - Collect the transform parquet and store only the newest records in serving
