@@ -30,7 +30,10 @@ Create the following resources:
     - What is the main difference between csv and parquet?
   - Step 2: Now we want to upload multiple csv file and check whether the entries are new or have to be updated. 
     - Define a primary key in csv. No actual todo just ensure that your csv has a column with unique values. **SIMPLIFICATION**: use fixed naming in the notebook. hence, if you update the raw csv, use the same name. 
-    - Create the following databricks nb: read the transform parquet and the raw parquet. Check whether there are new or updated columns. If there are new or updated, append it in transform. Do not upload records which have not changed. Incl a upload timestame in the meta column.
+    - Create the following databricks nb: 
+      - read the transform parquet and the raw csv. 
+      - Check whether there are new or updated entries (rows). If there are new or updated rows, append it in the transform parquet. Do not upload records which have not been changed. 
+      - Incl a upload timestame as the new meta column in transfom parquet.
 - Databricks Notebook from Transform to Serving
   - Collect the transform parquet and store only the newest records in serving
 
