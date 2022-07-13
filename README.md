@@ -43,8 +43,24 @@ Create the following resources:
   - adjust nb such that you can provide the main parameters via data factory
 - We want to store the meta data in an sql table, like raw path, transform path, serving path in a sql table
   - create the Azure Sql DB: https://docs.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal
-  - Look up the dql table with databricks: https://docs.microsoft.com/en-us/azure/data-factory/control-flow-lookup-activity
+  - create a sql table [data_lake_control].[data_lake_entity] with id, entity, raw_path, transform_path, serving_path, primary_key
+  - Look up the db table with databricks: https://docs.microsoft.com/en-us/azure/data-factory/control-flow-lookup-activity
 - For each entry in the database run the notebooks via data factory
+
+## Task 3: Collect and store real data
+### Task 3.1: Daily Collection of API data
+- Find a suitable api (like weather, yahoo finance, ... --> not too complex)
+- Create NB "collect_api_data" which collects the data and stores it in raw --> Folder schema /<source>/<yyyymmdd>/<file_name>
+- Create a adf pipline which runs on a daily basis
+
+### Task 3.2: Update or insert into transform
+- Create a new sql table - [data_lake_log].[raw_to_transform_state] with columns id, entity, raw_path, load_state
+- After data is collect via  NB "collect_api_data" insert a new row in [data_lake_log].[raw_to_transform_state] where
+ - id is a counter and just increased by +1 (can be done by sql table automatically)
+ - entity (has to be provided)
+ - raw_path: path where new data is stored
+ - load_state = 'NEW'
+- Trigger transform pipeline where all entries from [data_lake_log].[raw_to_transform_state] are porcessed
 
 
 
